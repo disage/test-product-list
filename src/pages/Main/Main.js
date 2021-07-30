@@ -5,7 +5,6 @@ import Fab from '@material-ui/core/Fab'
 import firebase from '../../firebase'
 import './Main.css'
 import Modal from '@material-ui/core/Modal'
-import { Button } from '@material-ui/core'
 
 const Main = () => {
 	const [open, setOpen] = useState(false)
