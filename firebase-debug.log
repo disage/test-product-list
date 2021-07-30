@@ -1,0 +1,21 @@
+[debug] [2021-07-30T12:19:24.156Z] ----------------------------------------------------------------------
+[debug] [2021-07-30T12:19:24.157Z] Command:       C:\Program Files (x86)\nodejs\node.exe C:\Users\krech\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-07-30T12:19:24.158Z] CLI Version:   9.16.0
+[debug] [2021-07-30T12:19:24.158Z] Platform:      win32
+[debug] [2021-07-30T12:19:24.158Z] Node Version:  v14.14.0
+[debug] [2021-07-30T12:19:24.159Z] Time:          Fri Jul 30 2021 15:19:24 GMT+0300 (за східноєвропейським літнім часом)
+[debug] [2021-07-30T12:19:24.159Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-07-30T12:19:24.166Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-07-30T12:19:24.166Z] > authorizing via signed-in user (dimonoid2014@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\krech\OneDrive\Рабочий стол\git_projects\test-product-list
+

@@ -1,0 +1,21 @@
+.main {
+    margin: auto;
+    max-width: 1440px;
+}
+.floatingAddBtn {
+    right: 50px;
+    bottom: 50px;
+    position: fixed !important;
+    z-index: 5;
+}
+.productsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}

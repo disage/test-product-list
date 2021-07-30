@@ -1,0 +1,13 @@
+.addProductForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formInput {
+    margin: 30px !important;
+    width: 400px;
+}
+.formAddBtn {
+    width: 400px;
+}
