@@ -6,6 +6,8 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import './ProductItemCard.css'
 import { Link } from 'react-router-dom'
+import CardActions from '@material-ui/core/CardActions'
+import Button from '@material-ui/core/Button'
 
 const ProductItemCard = ({
 	productId,
@@ -42,6 +44,11 @@ const ProductItemCard = ({
 					</CardContent>
 				</CardActionArea>
 			</Link>
+			<CardActions className="cardActions">
+				<Button size="small" color="primary">
+					Удалить
+				</Button>
+			</CardActions>
 		</Card>
 	)
 }
