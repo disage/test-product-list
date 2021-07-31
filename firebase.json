@@ -1,6 +1,5 @@
 {
   "hosting": {
-    "site": "test-products-list",
     "public": "public",
     "ignore": [
       "firebase.json",
