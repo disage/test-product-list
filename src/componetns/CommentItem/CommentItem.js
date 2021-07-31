@@ -5,14 +5,18 @@ import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 
-const CommentItem = () => {
+const CommentItem = ({ description, dateOfCreation }) => {
+	let date = new Date(1970, 0, 1)
+	date.setSeconds(dateOfCreation)
+	let formatedDate = date.toString().split(' ')
+
 	return (
 		<Card className="comment" style={{ width: 500, marginBottom: 50 }}>
 			<CardContent>
 				<Typography color="textSecondary" align="left">
-					14:00 / 27.02.2021
+					{formatedDate[1] + ' ' + formatedDate[2] + ' ' + formatedDate[3]}
 				</Typography>
-				<Typography align="left">Well meaning and kindly.</Typography>
+				<Typography align="left">{description}</Typography>
 			</CardContent>
 			<CardActions>
 				<Button size="small">Удалить</Button>

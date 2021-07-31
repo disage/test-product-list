@@ -1,49 +1,52 @@
 import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
-import './AddProductForm.css'
+import './UpdateProductForm.css'
 import Button from '@material-ui/core/Button'
 import firebase from '../../firebase'
 
-const AddProductForm = ({ setClose, getData }) => {
-	const [newProduct, setNewProduct] = useState({
-		name: '',
-		description: '',
-		amount: '',
-		img: '',
-		weight: '',
-		color: '',
-		frameSize: ''
+const UpdateProductForm = ({ setClose, productItem, id, getData }) => {
+	let { name, description, amount, img, weight, color, frameSize } = productItem
+	const [product, setProduct] = useState({
+		name: name,
+		description: description,
+		amount: amount,
+		img: img,
+		weight: weight,
+		color: color,
+		frameSize: frameSize
 	})
-	const onCreate = () => {
+
+	const onChange = () => {
 		const db = firebase.firestore()
 		if (
-			newProduct.name.length > 0 &&
-			newProduct.description.length > 0 &&
-			newProduct.amount.length > 0 &&
-			newProduct.img.length > 0 &&
-			newProduct.weight.length > 0 &&
-			newProduct.color.length > 0 &&
-			newProduct.frameSize.length > 0
+			product.name.length > 0 &&
+			product.description.length > 0 &&
+			product.amount.length > 0 &&
+			product.img.length > 0 &&
+			product.weight.length > 0 &&
+			product.color.length > 0 &&
+			product.frameSize.length > 0
 		)
-			db.collection('products').add(newProduct)
+			db.collection('products').doc(id).update(product)
 		else {
 			alert('Заполните все поля')
 		}
 		setClose()
 		getData()
 	}
+
 	let NewProductHandler = event => {
 		const target = event.target
 		const value = target.value
 		const name = target.name
-		setNewProduct({
-			...newProduct,
+		setProduct({
+			...product,
 			[name]: value
 		})
 	}
 	return (
-		<form className="addProductForm">
-			<h2>Добавление продукта</h2>
+		<form className="updateProductForm">
+			<h2>Изменение продукта</h2>
 			<TextField
 				name="name"
 				className="formInput"
@@ -51,6 +54,7 @@ const AddProductForm = ({ setClose, getData }) => {
 				required
 				autoComplete="off"
 				onChange={NewProductHandler}
+				defaultValue={name}
 			/>
 			<TextField
 				name="description"
@@ -59,6 +63,7 @@ const AddProductForm = ({ setClose, getData }) => {
 				required
 				autoComplete="off"
 				onChange={NewProductHandler}
+				defaultValue={description}
 			/>
 			<TextField
 				name="amount"
@@ -67,6 +72,7 @@ const AddProductForm = ({ setClose, getData }) => {
 				required
 				autoComplete="off"
 				onChange={NewProductHandler}
+				defaultValue={amount}
 			/>
 			<TextField
 				name="img"
@@ -75,6 +81,7 @@ const AddProductForm = ({ setClose, getData }) => {
 				required
 				autoComplete="off"
 				onChange={NewProductHandler}
+				defaultValue={img}
 			/>
 			<TextField
 				name="weight"
@@ -83,6 +90,7 @@ const AddProductForm = ({ setClose, getData }) => {
 				required
 				autoComplete="off"
 				onChange={NewProductHandler}
+				defaultValue={weight}
 			/>
 			<TextField
 				name="color"
@@ -91,6 +99,7 @@ const AddProductForm = ({ setClose, getData }) => {
 				required
 				autoComplete="off"
 				onChange={NewProductHandler}
+				defaultValue={color}
 			/>
 			<TextField
 				name="frameSize"
@@ -99,12 +108,13 @@ const AddProductForm = ({ setClose, getData }) => {
 				required
 				autoComplete="off"
 				onChange={NewProductHandler}
+				defaultValue={frameSize}
 			/>
-			<Button className="formAddBtn" onClick={onCreate}>
-				Добавить
+			<Button className="formAddBtn" onClick={onChange}>
+				Изменить
 			</Button>
 		</form>
 	)
 }
 
-export default AddProductForm
+export default UpdateProductForm

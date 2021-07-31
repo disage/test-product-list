@@ -10,7 +10,7 @@ const Main = () => {
 	const [open, setOpen] = useState(false)
 	const [products, setProducts] = useState([])
 
-	useEffect(() => {
+	let getData = () => {
 		const db = firebase.firestore()
 		db.collection('products')
 			.get()
@@ -23,7 +23,11 @@ const Main = () => {
 				})
 				setProducts(data)
 			})
+	}
+	useEffect(() => {
+		getData()
 	}, [])
+
 	const handleOpen = () => {
 		setOpen(true)
 	}
@@ -31,7 +35,8 @@ const Main = () => {
 	const handleClose = () => {
 		setOpen(false)
 	}
-	const body = <AddProductForm setClose={() => handleClose()} />
+	const body = <AddProductForm setClose={() => handleClose()} getData={() => getData()} />
+
 	return (
 		<div className="main">
 			<Modal open={open} onClose={handleClose} className="modal">
