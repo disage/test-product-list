@@ -61,6 +61,7 @@ const Main = () => {
 						productName={item.name}
 						productDescription={item.description}
 						productAmount={item.amount}
+						getData={() => getData()}
 					/>
 				))}
 			</div>

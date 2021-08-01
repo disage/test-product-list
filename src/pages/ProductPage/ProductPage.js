@@ -6,6 +6,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import Divider from '@material-ui/core/Divider'
 import CommentItem from '../../componetns/CommentItem/CommentItem'
+import AddCommentForm from '../../componetns/AddCommentForm/AddCommentForm'
 import firebase from '../../firebase'
 import Fab from '@material-ui/core/Fab'
 import UpdateProductForm from '../../componetns/UpdateProductForm/UpdateProductForm'
@@ -16,7 +17,6 @@ const ProductPage = () => {
 	const [product, setProduct] = useState({})
 	const [comments, setComments] = useState([])
 	const [open, setOpen] = useState(false)
-	console.log(comments[0])
 	let getData = () => {
 		const db = firebase.firestore()
 		db.collection('products')
@@ -89,13 +89,16 @@ const ProductPage = () => {
 				</ListItem>
 			</List>
 			<h2>Комментарии</h2>
+			<AddCommentForm getData={() => getData()} productId={productId} />
 			<div className="commentsContainer">
 				{comments.length > 0 ? (
 					comments?.map(item => (
 						<CommentItem
 							key={item.id}
+							id={item.id}
 							description={item.description}
-							dateOfCreation={item.dateOfCreation?.seconds}
+							dateOfCreation={item.dateOfCreation}
+							getData={() => getData()}
 						/>
 					))
 				) : (
