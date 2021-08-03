@@ -21,14 +21,15 @@ const UpdateProductForm = ({ setClose, productItem, id, getData }) => {
 		if (
 			product.name.length > 0 &&
 			product.description.length > 0 &&
-			product.amount.length > 0 &&
+			product.amount >= 0 &&
 			product.img.length > 0 &&
 			product.weight.length > 0 &&
 			product.color.length > 0 &&
 			product.frameSize.length > 0
-		)
+		) {
 			db.collection('products').doc(id).update(product)
-		else {
+		} else {
+			console.log(product.amount.length)
 			alert('Заполните все поля')
 		}
 		setClose()

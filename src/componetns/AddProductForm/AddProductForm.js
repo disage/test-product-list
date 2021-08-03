@@ -8,7 +8,7 @@ const AddProductForm = ({ setClose, getData }) => {
 	const [newProduct, setNewProduct] = useState({
 		name: '',
 		description: '',
-		amount: '',
+		amount: 0,
 		img: '',
 		weight: '',
 		color: '',
@@ -19,7 +19,7 @@ const AddProductForm = ({ setClose, getData }) => {
 		if (
 			newProduct.name.length > 0 &&
 			newProduct.description.length > 0 &&
-			newProduct.amount.length > 0 &&
+			newProduct.amount >= 0 &&
 			newProduct.img.length > 0 &&
 			newProduct.weight.length > 0 &&
 			newProduct.color.length > 0 &&

@@ -17,5 +17,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
     backdrop-filter: blur(4px);
+}
+.sortBtn {
+    margin-bottom: 40px !important;
 }

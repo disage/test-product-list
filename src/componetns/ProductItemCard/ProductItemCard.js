@@ -24,11 +24,11 @@ const ProductItemCard = ({
 	//state for diaolog window about delete product
 	const [open, setOpen] = useState(false)
 
-	let deleteData = e => {
+	let deleteData = () => {
 		const db = firebase.firestore()
 		db.collection('products').doc(productId).delete()
-		setOpen(false)
 		getData()
+		setOpen(false)
 	}
 
 	const handleOpen = () => {
