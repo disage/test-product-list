@@ -6,7 +6,19 @@
     max-width: 1200px;
     align-items: center;
 }
+.addCommentInput {
+    width: 40%;
+}
 .addCommentBtn {
     width: 200px;
     height: 40px;
+}
+@media (max-width: 830px) {
+    .addCommentForm {
+        margin: 10px !important;
+    }
+    .addCommentInput {
+        margin: 0 !important;
+        width: 100%;
+    }
 }

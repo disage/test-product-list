@@ -47,7 +47,12 @@ const UpdateProductForm = ({ setClose, productItem, id, getData }) => {
 	}
 	return (
 		<form className="updateProductForm">
-			<h2>Изменение продукта</h2>
+			<div className="formHeader">
+				<h2>Добавление продукта</h2>
+				<Button className="closeModalBtn" onClick={() => setClose()}>
+					Назад
+				</Button>
+			</div>
 			<TextField
 				name="name"
 				className="formInput"

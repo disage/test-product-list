@@ -11,7 +11,7 @@ import firebase from '../../firebase'
 
 const CommentItem = ({ description, dateOfCreation, id, getData }) => {
 	let date = new Date(1970, 0, 1)
-	date.setSeconds(dateOfCreation)
+	date.setSeconds(dateOfCreation + 10800) // + 3 hours 
 	let formatedDate = date.toString().split(' ')
 	//state for diaolog window about delete product
 	const [open, setOpen] = useState(false)

@@ -8,13 +8,35 @@
     border-radius: 4px;
     max-width: 900px;
 }
+.formHeader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
 h2 {
     width: 100%;
 }
 .formInput {
     margin: 30px !important;
-    width: 40% !important;
+    width: 40%;
 }
 .formAddBtn {
     width: 400px;
+}
+@media (max-width: 830px) {
+    .addProductForm {
+        box-sizing: border-box;
+        padding: 10px !important;
+        width: 100% !important;
+        flex-direction: column !important;
+    }
+    h2 {
+        text-align: center;
+    }
+    .formHeader {
+        margin-top: 50px;
+    }
+    .formInput {
+        width: 80% !important;
+    }
 }

@@ -5,11 +5,29 @@
     flex-direction: column;
     justify-content: space-between;
 }
+.cardActionArea {
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+}
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between !important;
+    height: 100%;
+}
+.cardContentWrapepr {
+    display: flex;
+    flex-direction: column;
+}
 
 .itemDescription {
     margin: 0 20px 20px 20px !important;
 }
 a {
+    height: 100%;
     text-decoration: none;
     color: inherit;
     flex-direction: column;

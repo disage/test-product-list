@@ -30,3 +30,11 @@ a {
 .productImg {
     max-width: 700px;
 }
+@media (max-width: 830px) {
+    .productPage {
+        padding: 10px !important;
+    }
+    .productImg {
+        max-width: 95%;
+    }
+}

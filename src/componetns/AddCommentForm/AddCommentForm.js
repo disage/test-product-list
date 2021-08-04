@@ -29,7 +29,7 @@ const AddCommentForm = ({ getData, productId }) => {
 	return (
 		<form className="addCommentForm">
 			<TextField
-				className="formInput"
+				className="addCommentInput"
 				label="Комментарий"
 				required
 				autoComplete="off"

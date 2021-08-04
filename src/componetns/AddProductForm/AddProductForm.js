@@ -43,7 +43,12 @@ const AddProductForm = ({ setClose, getData }) => {
 	}
 	return (
 		<form className="addProductForm">
-			<h2>Добавление продукта</h2>
+			<div className="formHeader">
+				<h2>Добавление продукта</h2>
+				<Button className="closeModalBtn" onClick={() => setClose()}>
+					Назад
+				</Button>
+			</div>
 			<TextField
 				name="name"
 				className="formInput"

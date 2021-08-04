@@ -51,7 +51,7 @@ const ProductItemCard = ({
 				</DialogActions>
 			</Dialog>
 			<Link to={'/product/' + productId}>
-				<CardActionArea>
+				<CardActionArea className="cardActionArea">
 					<CardMedia
 						component="img"
 						alt={productName}
@@ -59,19 +59,21 @@ const ProductItemCard = ({
 						image={productImg}
 						title={productName}
 					/>
-					<CardContent>
-						<Typography gutterBottom variant="h5" component="h2">
-							{productName}
-						</Typography>
-						<Typography
-							variant="body2"
-							color="textSecondary"
-							component="p"
-							align="left"
-							className="itemDescription"
-						>
-							{productDescription}
-						</Typography>
+					<CardContent className="cardContent">
+						<div className="cardContentWrapepr">
+							<Typography gutterBottom variant="h5" component="h2">
+								{productName}
+							</Typography>
+							<Typography
+								variant="body2"
+								color="textSecondary"
+								component="p"
+								align="left"
+								className="itemDescription"
+							>
+								{productDescription}
+							</Typography>
+						</div>
 						<Typography color="primary">В наличии: {productAmount} шт.</Typography>
 					</CardContent>
 				</CardActionArea>
